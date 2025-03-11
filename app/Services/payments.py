@@ -27,7 +27,6 @@ class PaymentServices():
             cache.delete(f'payment_{id_payment}')
             logging.info(f'payment_{payment.id_payment} deleted to cache')
             self.repository.delete(payment)
-            #payment = Payment()
             return None
             
         logging.error("Unknown payment to delete")

@@ -16,18 +16,7 @@ class PaymentRepository:
         except IntegrityError as e:
             db.session.rollback()
             logging.error(f'Payment {payment.id_payment} cannot save, error {e}')
-            raise e
-        
-    # def update_payment(self, payment: Payment) -> Payment:
-    #     try:
-    #         db.session.add(payment)
-    #         db.session.commit()
-    #         logging.info(f'Payment {payment.id_payment} updated successfully')
-    #         return payment
-    #     except IntegrityError as e:
-    #         db.session.rollback()
-    #         logging.error(f'Payment {payment.id_payment} cannot update, error {e}')
-    #         raise e        
+            raise e     
 
     def delete(self, payment: Payment) -> None:
         try:
